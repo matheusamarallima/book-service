@@ -85,6 +85,12 @@
 			<artifactId>springdoc-openapi-webmvc-core</artifactId>
 			<version>1.6.14</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.14</version>
+		</dependency>
 
 
 

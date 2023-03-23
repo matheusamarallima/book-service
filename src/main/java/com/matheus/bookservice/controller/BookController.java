@@ -5,6 +5,8 @@ import com.matheus.bookservice.repository.BookRepository;
 import com.matheus.bookservice.entities.Book;
 import com.matheus.bookservice.proxy.CambioProxy;
 import com.matheus.bookservice.response.Cambio;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
-
+@Tag(name = "book endpoint")
 @RestController
 @RequestMapping("book-service")
 public class BookController {
@@ -27,7 +29,7 @@ public class BookController {
 
     @Autowired
     CambioProxy proxy;
-
+    @Operation(summary = "find a book by id")
     @GetMapping(value = "/{id}/{currency}")
     public Book findBook(
             @PathVariable("id") Long id,
